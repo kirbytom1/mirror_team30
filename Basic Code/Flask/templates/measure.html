@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/protoStyle.css') }}">
+    <title></title>
+</head>
+<body>
+        
+    <!--
+    This block checks for the presence of a variable named "error".
+    If "error" is defined, then the proceeding code block will be 
+    displayed to the user. Otherwise, it is ignored. 
+    -->
+    {% if error is defined %}
+    <div style="color: red;">
+        <h3>Invalid website!</h3>    
+    {% endif %}
+    
+    <h2>
+        Input your URL
+    </h2>
+    
+    <form action="/measure/track" method="POST">
+        <input type="text" name="URL">
+        <input type="submit" value="RUN AUDIT">
+    </form>
+
+</body>
+</html>
